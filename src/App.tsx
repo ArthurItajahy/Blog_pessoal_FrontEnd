@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from './componentes/estaticos/footer/Footer';
+import Navbar from './componentes/estaticos/navbar/Navbar';
 import './App.css';
 import Home from './paginas/home/Home';
 
@@ -6,8 +8,12 @@ import Home from './paginas/home/Home';
 
 function App() {
   return (
-    <Home />
-  );
-}
+    <>
+      <Navbar />
+        <Home />
+      <Footer />
+    </>
+  )
 
+}
 export default App;
