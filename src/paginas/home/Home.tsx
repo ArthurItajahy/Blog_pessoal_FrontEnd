@@ -5,7 +5,7 @@ import './Home.css';
 function Home(){
     return(
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#3F51B5" }}>
+            <Grid className="fonte" container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#000000" }}>
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
@@ -14,11 +14,11 @@ function Home(){
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
-                        <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
+                        <Button className="back" variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
+                    <img className="img" src="https://mensageirosideral.blogfolha.uol.com.br/files/2016/05/capa-25genios-thumb.jpg" alt="" width="100px" height="300px" />
                 </Grid>
                 <Grid xs={12} style={{ backgroundColor: "white" }}>
                 </Grid>
