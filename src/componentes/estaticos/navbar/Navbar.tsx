@@ -40,7 +40,7 @@ function Navbar(){
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Link to='/login'>
+                            <Link to='/logar'>
                             <Typography className="fonte"  variant="h5" color="inherit">
                                 Logout
                             </Typography>
