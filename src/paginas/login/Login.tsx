@@ -45,7 +45,7 @@ function Login(){
         }
 
     return(
-        <Grid style={{ backgroundColor: '#00082b'}} container direction='row' justifyContent='center' alignItems='center'>
+        <Grid style={{ backgroundColor: '#2d51f3'}} container direction='row' justifyContent='center' alignItems='center'>
             <Grid  alignItems='center' xs={6}>
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
