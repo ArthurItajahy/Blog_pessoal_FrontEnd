@@ -1,11 +1,30 @@
-.back{
-    background:rgb(17, 16, 16)!important;
+.back-navbar{
+    background:#000803!important;
+    padding: 10px;
 }
-.fonte{
+.fonte-title{
 
     font-family: Arial !important;
     font-weight: bold !important;
-    color: #fafafa !important;
+    color: #8dff89 !important;
+    margin-right: 6px!important;
 
-
+}
+.font-linkNavbar{
+    justify-content: center;
+    font-family: Arial !important;
+    font-size: 2px;
+    font-weight: bold !important;
+    color: #026400 !important;
+}
+.font-linkNavbar:hover{
+    background-color: #8dff89;
+    padding: 3.5px;
+    border-radius: 8%;
+}
+.muda{
+    justify-content: center;
+}
+.text-decorator-none{
+    text-decoration: none;
 }

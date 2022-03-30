@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
+import { Box, Button, ButtonGroup, Grid } from '@mui/material';
 
 import './Navbar.css';
 import { Link } from 'react-router-dom';
@@ -10,53 +10,53 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
         <>
-            <AppBar className="back" position="static">
-                <Toolbar variant="dense">
-                    <Box style={{ cursor: "pointer" }} >
-                        <Typography className="fonte" variant="h4" color="inherit">
+            <AppBar className="back-navbar" position="static">
+                <Grid item xs={12} justifyContent='end'>
+                    <Grid item xs={6}>
+                        <Typography className="fonte-title" variant="h4" color="inherit">
                             Gênio Indomável
                         </Typography>
-                    </Box>
-
-                    <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Link to='/home'>
-                                <Typography className="fonte" variant="h5" color="inherit">
+                    </Grid>
+                    <Grid item xs={6} >
+                        <Button >
+                            <Link className='text-decorator-none ' to='/home'>
+                                <Typography className='font-linkNavbar' variant="h5">
                                     Home
                                 </Typography>
                             </Link >
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Link to='/posts'>
-                                <Typography className="fonte" variant="h5" color="inherit">
+                        </Button>
+                        <Button>
+                            <Link className='text-decorator-none' to='/posts'>
+                                <Typography className='font-linkNavbar' variant="h5" >
                                     Postagem
                                 </Typography>
                             </Link>
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Link to='/tema'>
-                                <Typography className="fonte" variant="h5" color="inherit">
-                                    Tema
-                                </Typography>
-                            </Link>
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Link to='/cadastrar'>
-                                <Typography className="fonte" variant="h5" color="inherit">
+                        </Button>
+                        <Button><Link className='text-decorator-none' to='/tema'>
+                            <Typography className='font-linkNavbar' variant="h5" >
+                                Tema
+                            </Typography>
+                        </Link>
+
+                        </Button>
+                        <Button>
+                            <Link className='text-decorator-none' to='/cadastrar'>
+                                <Typography className='font-linkNavbar' variant="h5" >
                                     Cadastrar
                                 </Typography>
                             </Link>
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Link to='/logar'>
-                                <Typography className="fonte" variant="h5" color="inherit">
+                        </Button>
+                        <Button>
+                            <Link className='text-decorator-none' to='/logar'>
+                                <Typography className='font-linkNavbar' variant="h5" >
                                     Logout
                                 </Typography>
                             </Link>
-                        </Box>
-                    </Box>
+                        </Button>
+                    </Grid>
+                </Grid>
 
-                </Toolbar>
+
             </AppBar>
         </>
     )

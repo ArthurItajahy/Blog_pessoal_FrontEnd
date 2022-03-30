@@ -1,26 +1,53 @@
+.img-principal{
+    background-image: url(../../../assets/Albert.png);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
 .text-decorator-none{
     text-decoration: none;
 }
-grid.back{
-    background-color: #2d51f3 !important;
-    color: #ffffff;
+.back-grid{
+    background-color: #04c263 !important;
+    color: #ff0000 !important;
+    border-radius: #ff0000;
 }
 form{
-
-    color: #ffffff;
+  
+    color: #004715;
+    border-color: #073312;
+}
+.editborder::after{
+    border-color: #ff0000;
 }
 
 .font-style{
-    color: #ffffff;
+    color: #00250b;
     font-weight: bold;
 }
+.font-link{
+    color: #00250b;
+    font-weight: 900;
+    font-size: larger;
+}
+.font-link:hover{
+    color: #028b2b;
+}
+
 button.back{
     
-    background-color: #000000 !important;
-    color: #ffffff;
+    background-color: transparent !important;
+    border: 3px solid #002c06;
+    color: #002907;
+    font-weight: bold;
 
 }
 button.back:hover{
-    background-color: #ffffff !important;
-    color: #000000;
+    background-color: #00ff37 !important;
+    color: #002c06;
+    border:3px solid #00ff00;
 }
+

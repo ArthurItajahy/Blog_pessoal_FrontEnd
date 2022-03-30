@@ -1,5 +1,5 @@
 .imagem2{
-    background-image: url(https://media3.giphy.com/avatars/geriko/HC5Ulrtxkzpz.gif);
+    background-image: url(../../../assets/steve.png);
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
@@ -11,6 +11,34 @@
     font-weight: bold !important;
 }
 
-.btnCancelar{
+button.btnCancelar{
     margin-right: 20px !important;
+    background-color: transparent !important;
+    border: 3px solid #2c0000;
+    color: #290000;
+    font-weight: bold;
 }
+.btnCancelar:hover{
+    background-color: #ff0000 !important;
+    color: #2c0000;
+    border:3px solid #ff0000;
+}
+
+.font-style-cadastro{
+    color: #00250b;
+    font-weight: bold;
+}
+button.back-button{
+    
+    background-color: transparent !important;
+    border: 3px solid #002c06;
+    color: #002907;
+    font-weight: bold;
+
+}
+button.back-button:hover{
+    background-color: #00ff37 !important;
+    color: #002c06;
+    border:3px solid #00ff00;
+}
+
