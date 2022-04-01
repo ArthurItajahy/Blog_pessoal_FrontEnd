@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Typography, Box, Grid, Button} from '@material-ui/core';
 import './Home.css';
 import TabPostagem from "../../componentes/postagens/tabpostagens/TabPostagem";
+import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
+import useLocalStorage from "react-use-localstorage";
+import { useHistory } from "react-router-dom";
 
 function Home(){
+    let history = useHistory();
+    const [token, setToken] = useLocalStorage('token');
+    
+    useEffect(() => {
+      if (token == "") {
+          alert("Você precisa estar logado")
+          history.push("/logar")
+  
+      }
+  }, [token])
     return(
         <>
-            <Grid className="fonte" container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#000000" }}>
+            <Grid className="fonte back-home" container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
@@ -14,14 +27,14 @@ function Home(){
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
+                            <ModalPostagem/>
                         </Box>
                         <Button className="back" variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
                     </Box>
                 </Grid>
-                <Grid item xs={6} >
-                    <img className="img" src="https://64.media.tumblr.com/71c46337ebcd4bc2ac41fda76af4aad4/tumblr_ouo8yb59lG1s32c21o1_r2_500.gifv" alt="" width="50px" height="200px" />
+                <Grid item xs={6} className="img-genios"  >
                 </Grid>
-                <Grid xs={12} className='postagens'>
+                <Grid xs={12} className='postagens back-postagem'>
                     <TabPostagem />
                 </Grid>
             </Grid>

@@ -42,3 +42,10 @@ button.back-button:hover{
     border:3px solid #00ff00;
 }
 
+
+.MuiInputLabel-animated{
+    color: #002c06!important;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    border-color: #002c06!important;
+}

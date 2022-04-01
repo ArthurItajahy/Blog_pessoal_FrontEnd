@@ -1,12 +1,17 @@
 .back-navbar{
     background:#000803!important;
     padding: 10px;
+    
+}
+.end-navbar{
+    display: flex;
+    justify-content: flex-end;
 }
 .fonte-title{
 
     font-family: Arial !important;
     font-weight: bold !important;
-    color: #8dff89 !important;
+    color: #ffffff !important;
     margin-right: 6px!important;
 
 }
@@ -15,11 +20,10 @@
     font-family: Arial !important;
     font-size: 2px;
     font-weight: bold !important;
-    color: #026400 !important;
+    color: #ffffff !important;
 }
 .font-linkNavbar:hover{
-    background-color: #8dff89;
-    padding: 3.5px;
+    color: #04c263 !important;
     border-radius: 8%;
 }
 .muda{
