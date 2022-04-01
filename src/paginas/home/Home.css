@@ -1,5 +1,5 @@
 .img-genios{
-    background-image: url(../../../assets/thomas.png);
+    background-image: url(../../../assets/sherlock.png);
     background-repeat: no-repeat;
     width: 10vh;
     min-height: 80vh;
@@ -13,7 +13,7 @@
 }
 
 .img{
-    width: 500px;
+    width: 200px;
     height: 500px;
     display: block;
     margin: 0 auto;
@@ -31,6 +31,31 @@
 
 
 }
+.title-princial-home{
+    font-family: Arial !important;
+    font-weight: bold !important;
+    color: #041a00 !important;
+    font-size: 3rem !important;
+}
+.text-princpal-home{
+    font-family: Arial !important;
+    font-weight: bold !important;
+    color: #002408 !important;
+    
+}
 .back-postagem{
-    background-color: #fafffc;
+    background-color: #070606;
+}
+.back-button-postsee{
+    background-color: transparent !important;
+    border: 3px solid #000c01 !important;
+    color: #010a00 !important;
+    font-weight: bolder !important;
+    font-size: medium!important;
+
+}
+.back-button-postsee:hover{
+    background-color: #f7f4f4 !important;
+    color: #010a00 !important;
+    border:3px solid #f7f4f4 !important;
 }

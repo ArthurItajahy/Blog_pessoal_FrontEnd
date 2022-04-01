@@ -1,3 +1,10 @@
-.titulo{
+.titulo-tab{
     font-weight: bold;
+    color: #ffffff;
+ }
+
+ .menu-tab{
+    font-weight: bold !important;
+    font-size: medium !important;
+    color: #001301 !important;
  }

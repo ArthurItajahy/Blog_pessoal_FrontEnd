@@ -5,6 +5,7 @@ import {Button,Box } from "@material-ui/core"
 import CloseIcon from '@material-ui/icons/Close';
 import './ModalPostagem.css';
 import CadastroPost from '../cadastrarPost/CadastrarPost';
+import AddIcon from '@material-ui/icons/Add';
 
 
 function getModalStyle() {
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       position: 'absolute',
       width: 400,
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: '#ebc700',
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
@@ -61,7 +62,7 @@ function ModalPostagem () {
       <Button
         variant="outlined"
         className="btnModal"
-        onClick={handleOpen}>Nova Postagem</Button>
+        onClick={handleOpen}><AddIcon/></Button>
       <Modal
         open={open}
         onClose={handleClose}

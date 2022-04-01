@@ -3,6 +3,15 @@
 }
 
 .btnModal{
-    border-color: white !important;
-    background-color: white !important;
+    background-color: transparent !important;
+    border: 3px solid #6e5e01 !important;
+    color: #686101 !important;
+    font-weight: bold !important;
+    font-size: medium !important;
+}
+
+.btnModal:hover{
+    background-color: #fac000 !important;
+    color: #050505 !important;
+    border:3px solid #ebc700  !important;
 }

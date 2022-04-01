@@ -4,7 +4,7 @@ import './Home.css';
 import TabPostagem from "../../componentes/postagens/tabpostagens/TabPostagem";
 import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
 import useLocalStorage from "react-use-localstorage";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Home(){
     let history = useHistory();
@@ -22,14 +22,13 @@ function Home(){
             <Grid className="fonte back-home" container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
-                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
-                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>expresse aqui os seus pensamentos e opiniões!</Typography>
+                        <Typography variant="h3" gutterBottom component="h3" align="center" className="title-princial-home">Welcome to the jungle!</Typography>
+                        <Typography variant="h5" gutterBottom  component="h5" align="center" className="text-princpal-home" >Um lugar focado em reunir pessoas para resolver problemas...</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
-                        <Box marginRight={1}>
-                            <ModalPostagem/>
-                        </Box>
-                        <Button className="back" variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
+                        <Link to="/posts" className="text-decorator-none">
+                            <Button className="back-button-postsee" variant="outlined" >Ver Postagens</Button>
+                        </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={6} className="img-genios"  >

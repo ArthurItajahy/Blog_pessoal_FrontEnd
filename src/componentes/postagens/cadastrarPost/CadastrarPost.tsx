@@ -78,28 +78,30 @@ function CadastroPost() {
 
         if (id !== undefined) {
             try {
-                put(`/postagens`, postagem, setPostagem, {
+                await put(`/postagens`, postagem, setPostagem, {
                     headers: {
                         'Authorization': token
                     }
                 })
                 alert('Postagem atualizada com sucesso');
+                back()
             } catch (error) {
                 alert('Error!! a o atualizar.')
             }
         } else {
-            try{
-            post(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Postagem cadastrada com sucesso');
-        }catch (error){
-            alert('Error!! a o cadastrar.')
+            try {
+                await post(`/postagens`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                alert('Postagem cadastrada com sucesso');
+                back()
+            } catch (error) {
+                alert('Error!! a o postar.')
+            }
         }
-        }
-        back()
+        
 
     }
 
@@ -110,7 +112,7 @@ function CadastroPost() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+                <Typography className="title-princial-home" variant="h3" color="textSecondary" component="h1" align="center" >Nova Postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
@@ -131,7 +133,7 @@ function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button className="back-button" type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>
                 </FormControl>

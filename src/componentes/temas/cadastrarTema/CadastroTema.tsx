@@ -50,20 +50,27 @@ function CadastroTema() {
         async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
             e.preventDefault()
             if (id !== undefined) {
-                console.log(tema)
-                put(`/temas`, tema, setTema, {
+                try{
+                await put(`/temas`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
                 alert('Tema atualizado com sucesso');
+            }catch(error){
+                alert('Error!! Ao atualizar.')
+            }
             } else {
-                post(`/temas`, tema, setTema, {
+                try{
+                await post(`/temas`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
                 alert('Tema cadastrado com sucesso');
+            }catch{
+                alert('Error!! ao cadastrar tema.')
+            }
             }
             back()
     
@@ -76,9 +83,9 @@ function CadastroTema() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
+                <Typography className="title-princial-home" variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
                 <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button className="back-button" type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>
             </form>

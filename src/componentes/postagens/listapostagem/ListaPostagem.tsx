@@ -33,19 +33,19 @@ function ListaPostagem() {
 
   }, [posts.length])
   return (
-    <>
+    < >
       {
         posts.map(post => (
-          <Box m={2} >
-            <Card className="back-home" variant="outlined">
-              <CardContent>
+          <Box  className="largura" m={1} >
+            <Card className="back-listapostagem" variant="outlined">
+              <CardContent >
                 <Typography color="textSecondary" gutterBottom>
                   Postagens
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography className="titulo-listagempostagem" variant="h5" component="h2">
                   {post.titulo}
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography  className="text-listagempostagem" variant="body2" component="p">
                   {post.texto}
                 </Typography>
                 <Typography variant="body2" component="p">
@@ -57,14 +57,14 @@ function ListaPostagem() {
 
                   <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      <Button variant="contained" className="marginLeft back-button" size='small' color="primary" >
                         atualizar
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button  className='btnCancelar' variant="contained" size='small' color="secondary">
                         deletar
                       </Button>
                     </Box>

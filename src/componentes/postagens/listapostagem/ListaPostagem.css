@@ -1,3 +1,27 @@
 .text-decorator-none{
     text-decoration: none;
 }
+.largura{
+    width: 50%!important;
+    
+}
+.back-listapostagem{
+    background-color: #04c263 !important;
+    color: #000000;
+    font-weight: bold;
+    font-size: larger;
+    
+    
+}
+.text-listagempostagem{
+    color: #000000 !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+}
+
+.titulo-listagempostagem{
+    color: #001f0f !important;
+    font-weight: bold !important;
+    font-size: 30px !important;
+
+}

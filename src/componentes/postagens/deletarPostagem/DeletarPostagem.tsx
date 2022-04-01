@@ -50,13 +50,13 @@ function DeletarPostagem() {
   return (
     <>
       <Box m={2}>
-        <Card variant="outlined" >
+        <Card className="back-home" variant="outlined" >
           <CardContent>
             <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
+              <Typography className="titulo-listagempostagem" color="textSecondary" gutterBottom>
                 Deseja deletar a Postagem:
               </Typography>
-              <Typography color="textSecondary" >
+              <Typography className="text-listagempostagem" color="textSecondary" >
               {post?.titulo}
               </Typography>
             </Box>
@@ -65,12 +65,12 @@ function DeletarPostagem() {
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-              <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+              <Button onClick={sim} variant="contained" className="marginLeft back-button" size='large' color="primary">
                 Sim
               </Button>
               </Box>
               <Box>
-              <Button  onClick={nao} variant="contained" size='large' color="secondary">
+              <Button className="btnCancelar"  onClick={nao} variant="contained" size='large' color="secondary">
                 Não
               </Button>
               </Box>
