@@ -6,6 +6,7 @@ import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import AddIcon from '@material-ui/icons/Add';
 
 function CadastroPost() {
     let history = useHistory();
@@ -106,13 +107,13 @@ function CadastroPost() {
     }
 
     function back() {
-        history.push('/posts')
+        history.push('/home')
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography className="title-princial-home" variant="h3" color="textSecondary" component="h1" align="center" >Nova Postagem</Typography>
+        <Container maxWidth="sm" className="topo form-style">
+            <form className="form-principal-cadastrar" onSubmit={onSubmit}>
+                <Typography  className="title-cadastro-tema" variant="h3"  component="h1" align="center" >Nova Postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
@@ -133,8 +134,8 @@ function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button className="back-button" type="submit" variant="contained" color="primary">
-                        Finalizar
+                    <Button  className="btnModal" type="submit" variant="contained" color="primary">
+                        Criar<AddIcon className='icon-model'/>
                     </Button>
                 </FormControl>
             </form>

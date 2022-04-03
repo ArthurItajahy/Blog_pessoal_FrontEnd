@@ -5,6 +5,11 @@
 
  .menu-tab{
     font-weight: bold !important;
-    font-size: medium !important;
-    color: #001301 !important;
+    font-size: medium!important;
+    color: #000700 !important;
+
+ }
+ .menu-tab:hover{
+   color: #53ff95 !important;
+   background-color: #00361b63;
  }

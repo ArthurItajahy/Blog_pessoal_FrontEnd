@@ -1,0 +1,22 @@
+.img-sobre{
+    background-image: url(../../../assets/arthur.png);
+    border-radius: 80%;
+    background-repeat: no-repeat;
+    width: 10vh;
+    min-height: 65vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.back-sobre{
+    background-color: #00000000!important;
+}
+.title-princial-sobre{
+    color: #ffffff!important;
+    font-weight: bold!important;
+}
+
+.text-princpal-sobre{
+    color: #ffffff!important;
+    font-weight: bold!important;
+}

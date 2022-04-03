@@ -4,6 +4,9 @@ import { TabContext, TabPanel } from '@material-ui/lab';
 import ListaPostagem from '../listapostagem/ListaPostagem';
 import './TabPostagem.css';
 import ModalPostagem from '../modalPostagem/ModalPostagem';
+import Sobre from '../../sobre/Sobre';
+import ListaTema from '../../temas/listatema/ListaTema';
+import ModalTema from '../../temas/modalTema/ModalTema';
 
 
 function TabPostagem() {
@@ -14,23 +17,29 @@ function TabPostagem() {
   return (
     <>
       <TabContext value={value}>
-        <AppBar position="static" className='back-home menu-tab'>
+        <AppBar position="static" className='back-home '>
           <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Todas as postagens" value="1"/>
-            <Tab label="Sobre-nós" value="2" />
+            <Tab className="menu-tab" label="Todas as postagens" value="1"/>
+            <Tab className="menu-tab" label="Todos os temas" value="2" />
+            <Tab className="menu-tab" label="Sobre-Me" value="3" />
           </Tabs>
         </AppBar>
         <TabPanel value="1" >
           <Box  display="flex" flexWrap="wrap" justifyContent="center" style={{margin:'5px'}}>
             <ModalPostagem/>
           </Box>
-          <Box  display="flex" flexWrap="wrap" justifyContent="center">
+          <Box  display="flex" flexWrap="wrap" >
             <ListaPostagem />
           </Box>
         </TabPanel>
         <TabPanel value="2">
-          <Typography variant="h5" gutterBottom  component="h5" align="center" className="titulo-tab">Sobre-nós</Typography>
-          <Typography variant="body1" gutterBottom  align="justify" className="titulo-tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
+          <Box  display="flex" flexWrap="wrap" justifyContent="center" style={{margin:'5px'}}>
+            <ModalTema/>
+          </Box>
+          <ListaTema/>
+        </TabPanel>
+        <TabPanel value="3">
+          <Sobre/>
         </TabPanel>
       </TabContext>
     </>

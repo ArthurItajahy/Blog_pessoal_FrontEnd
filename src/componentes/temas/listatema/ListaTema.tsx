@@ -38,8 +38,8 @@ function ListaTema() {
     <>
     {
       temas.map(tema =>(
-      <Box m={2} >
-        <Card className="back-home" variant="outlined">
+      <Box className="largura" m={0} >
+        <Card  className="back-listapostagem" variant="outlined">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Tema

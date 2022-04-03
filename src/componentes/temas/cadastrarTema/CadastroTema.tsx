@@ -5,7 +5,8 @@ import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-
+import AddIcon from '@material-ui/icons/Add';
+import './CadastroTema.css';
 
 function CadastroTema() {
     let history = useHistory();
@@ -77,16 +78,16 @@ function CadastroTema() {
         }
     
         function back() {
-            history.push('/tema')
+            history.push('/home')
         }
   
     return (
         <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography className="title-princial-home" variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button className="back-button" type="submit" variant="contained" color="primary">
-                    Finalizar
+            <form className="form-principal-cadastrar" onSubmit={onSubmit}>
+                <Typography className="title-cadastro-tema"  variant="h3"  component="h1" align="center" >CRIAR NOVO TEMA</Typography>
+                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Tema" variant="outlined" name="descricao" margin="normal" fullWidth />
+                <Button  className="btnModal" type="submit" variant="contained" color="primary">
+                 Criar<AddIcon className='icon-model'/>
                 </Button>
             </form>
         </Container>

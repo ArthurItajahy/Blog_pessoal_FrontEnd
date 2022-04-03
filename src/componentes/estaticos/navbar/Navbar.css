@@ -3,9 +3,31 @@
     padding: 10px;
     
 }
+.icon-nav{
+    font-size: 1.5em!important;
+
+}
 .end-navbar{
     display: flex;
     justify-content: flex-end;
+}
+.button-home-nav{
+    margin-right: 77rem !important;
+}
+.font-menu-navbar{
+    justify-content: center;
+    font-family: Arial !important;
+    font-size: 2px;
+    font-weight: bold !important;
+    color: #f7f0f0 !important;
+    margin-left: 4%!important;
+}
+.font-menu-navbar:hover{
+    color: #04c263 !important;
+}
+
+#simple-menu .MuiPaper-root{
+    background-color: #020202;
 }
 .fonte-title{
 
@@ -24,7 +46,6 @@
 }
 .font-linkNavbar:hover{
     color: #04c263 !important;
-    border-radius: 8%;
 }
 .muda{
     justify-content: center;

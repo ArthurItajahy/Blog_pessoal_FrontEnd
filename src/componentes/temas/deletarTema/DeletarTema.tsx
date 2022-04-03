@@ -36,6 +36,7 @@ function DeletarTema() {
       }
 
       function sim() {
+        try{
           history.push('/tema')
           deleteId(`/temas/${id}`, {
             headers: {
@@ -43,7 +44,10 @@ function DeletarTema() {
             }
           });
           alert('Tema deletado com sucesso');
+        }catch(error){
+          alert('Error!! ao deletear');
         }
+      }
       
         function nao() {
           history.push('/tema')
@@ -51,8 +55,8 @@ function DeletarTema() {
           
   return (
     <>
-       <Box m={2}>
-        <Card className="back-home" variant="outlined">
+       <Box   className="largura" m={2}>
+        <Card className="back-listapostagem" variant="outlined">
           <CardContent>
             <Box justifyContent="center">
               <Typography className="text-listagempostagem" color="textSecondary" gutterBottom>

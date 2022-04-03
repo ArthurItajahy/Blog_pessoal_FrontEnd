@@ -3,9 +3,9 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {Button,Box } from "@material-ui/core"
 import CloseIcon from '@material-ui/icons/Close';
-import './ModalPostagem.css';
-import CadastroPost from '../cadastrarPost/CadastrarPost';
+import './ModalTema.css';
 import AddIcon from '@material-ui/icons/Add';
+import CadastroTema from '../cadastrarTema/CadastroTema';
 
 
 function getModalStyle() {
@@ -52,7 +52,7 @@ function ModalPostagem () {
       
       </Box>
       
-      <CadastroPost/>
+      <CadastroTema/>
       
     </div>
   );

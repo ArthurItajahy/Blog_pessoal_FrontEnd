@@ -35,6 +35,7 @@ function DeletarPostagem() {
         }
 
         function sim() {
+          try{
             history.push('/posts')
             deleteId(`/postagens/${id}`, {
               headers: {
@@ -42,6 +43,9 @@ function DeletarPostagem() {
               }
             });
             alert('Postagem deletada com sucesso');
+          }catch(error){
+            alert('Error!A o deletar.')
+          }
           }
         
           function nao() {
@@ -49,8 +53,8 @@ function DeletarPostagem() {
           }
   return (
     <>
-      <Box m={2}>
-        <Card className="back-home" variant="outlined" >
+      <Box  className="largura" m={2}>
+        <Card className="back-listapostagem" variant="outlined" >
           <CardContent>
             <Box justifyContent="center">
               <Typography className="titulo-listagempostagem" color="textSecondary" gutterBottom>

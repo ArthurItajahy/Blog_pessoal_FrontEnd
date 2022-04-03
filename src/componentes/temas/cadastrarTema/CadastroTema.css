@@ -1,3 +1,14 @@
 .topo{
     margin-top: 20px;
 }
+.form-principal-cadastrar{
+    color: #00270c!important;
+    border-radius: 4%;
+    background-color: #fafafa!important;
+    padding: 4rem;
+
+}
+.title-cadastro-tema{
+    font-family:"Convection" !important;
+    font-weight: bold!important;
+}
