@@ -10,14 +10,6 @@ import './Navbar.css';
 
 
 function Navbar() {
-    const [token, setToken] = useLocalStorage('token');
-    let history = useHistory();
-
-    function goLogout(){
-        setToken('')
-        alert("Usuario deslogado")
-        history.push('/logar')
-    }
 
     return (
         <>

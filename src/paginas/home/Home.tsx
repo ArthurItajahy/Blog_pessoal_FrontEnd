@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import {Typography, Box, Grid, Button} from '@material-ui/core';
-import './Home.css';
 import TabPostagem from "../../componentes/postagens/tabpostagens/TabPostagem";
-import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
-import useLocalStorage from "react-use-localstorage";
 import { Link, useHistory } from "react-router-dom";
+import { TokenState } from "../../store/tokens/tokensRedux";
+import { useSelector } from "react-redux";
+
+import './Home.css';
 
 function Home(){
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    ) 
     
     useEffect(() => {
       if (token == "") {

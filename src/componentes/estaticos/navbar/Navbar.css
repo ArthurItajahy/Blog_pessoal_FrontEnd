@@ -19,15 +19,15 @@
     font-family: Arial !important;
     font-size: 2px;
     font-weight: bold !important;
-    color: #f7f0f0 !important;
+    color: #00b45a !important;
     margin-left: 4%!important;
 }
 .font-menu-navbar:hover{
-    color: #04c263 !important;
+    color: #d1ffe8 !important;
 }
 
 #simple-menu .MuiPaper-root{
-    background-color: #020202;
+    background-color: #0c1812;
 }
 .fonte-title{
 

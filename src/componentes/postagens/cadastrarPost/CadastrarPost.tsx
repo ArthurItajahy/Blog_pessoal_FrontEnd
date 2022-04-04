@@ -7,12 +7,17 @@ import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import AddIcon from '@material-ui/icons/Add';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensRedux';
 
 function CadastroPost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      ) 
+    
 
     useEffect(() => {
         if (token == "") {

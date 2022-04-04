@@ -4,16 +4,17 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Box, Button, ButtonGroup, Grid, TextField } from '@mui/material';
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import HomeIcon from '@material-ui/icons/Home';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuIcon from '@material-ui/icons/Menu';
 
-import SearchIcon from '@material-ui/icons/Search';
 import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
 
 import './Navbar.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensRedux';
+import { addToken } from '../../../store/tokens/actions';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -24,6 +25,7 @@ const useStyles1 = makeStyles((theme: Theme) =>
         },
     }),
 );
+
 function ImageAvatars() {
     const classes = useStyles1();
 
@@ -36,7 +38,9 @@ function ImageAvatars() {
 
 function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const [token, setToken] = useLocalStorage('token');
+
+   
+    const dispatch = useDispatch();
     let history = useHistory();
 
 
@@ -48,11 +52,12 @@ function SimpleMenu() {
         setAnchorEl(null);
     };
     function goLogout() {
-        setToken('')
+        
+        dispatch(addToken(''))
         alert("Usuario deslogado")
         history.push('/logar')
     }
-
+  
     return (
         <>
             <Button className='text-decorator-none font-linkNavbar ' aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
@@ -98,28 +103,37 @@ function SimpleMenu() {
     );
 }
 function NavbarPri() {
+    
+    var navbarComponent;
+   
 
+const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens); 
+
+    if(token != ""){
+        navbarComponent =  <AppBar className="back-navbar" position="static">
+        <Toolbar className="end-navbar">
+         
+            <Button className='button-home-nav' >
+                <Link className='text-decorator-none ' to='/home'>
+
+                    <Typography className='font-linkNavbar ' variant="h5">
+                        <HomeIcon className="icon-nav" />
+                    </Typography>
+                </Link >
+                
+            </Button>
+            <ImageAvatars />
+            <SimpleMenu />
+         
+        </Toolbar>
+    </AppBar>
+    }
 
 
     return (
         <>
-            <AppBar className="back-navbar" position="static">
-                <Toolbar className="end-navbar">
-                 
-                    <Button className='button-home-nav' >
-                        <Link className='text-decorator-none ' to='/home'>
-
-                            <Typography className='font-linkNavbar ' variant="h5">
-                                <HomeIcon className="icon-nav" />
-                            </Typography>
-                        </Link >
-                        
-                    </Button>
-                    <ImageAvatars />
-                    <SimpleMenu />
-                 
-                </Toolbar>
-            </AppBar>
+           {navbarComponent}
         </>
     )
 
