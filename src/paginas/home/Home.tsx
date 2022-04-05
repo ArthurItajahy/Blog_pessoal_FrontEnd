@@ -2,14 +2,14 @@ import React, { useEffect} from "react";
 import {Typography, Box, Grid, Button} from '@material-ui/core';
 import TabPostagem from "../../componentes/postagens/tabpostagens/TabPostagem";
 import { Link, useHistory } from "react-router-dom";
-import { TokenState } from "../../store/tokens/tokensRedux";
+import { UserState } from "../../store/tokens/keysRedux";
 import { useSelector } from "react-redux";
 
 import './Home.css';
 
 function Home(){
     let history = useHistory();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState,UserState["tokens"]>(
         (state) => state.tokens
     ) 
     

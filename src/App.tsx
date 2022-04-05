@@ -18,6 +18,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 
 import './App.css';
+import Perfil from './paginas/Perfil/Perfil';
 
 
 
@@ -82,7 +83,10 @@ function App() {
               <NavbarPri />
               <DeletarTema />
             </Route>
-
+            <Route path='/perfil'>
+               <NavbarPri />
+              <Perfil />
+            </Route>
           </div>
         </Switch>
         <Footer />

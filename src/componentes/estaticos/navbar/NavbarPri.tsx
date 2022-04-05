@@ -13,8 +13,8 @@ import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
 
 import './Navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensRedux';
-import { addToken } from '../../../store/tokens/actions';
+import { UserState } from '../../../store/tokens/keysRedux';
+import { addToken } from '../../../store/tokens/action';
 
 const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
@@ -39,7 +39,7 @@ function ImageAvatars() {
 function SimpleMenu() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
-   
+
     const dispatch = useDispatch();
     let history = useHistory();
 
@@ -52,12 +52,12 @@ function SimpleMenu() {
         setAnchorEl(null);
     };
     function goLogout() {
-        
+
         dispatch(addToken(''))
         alert("Usuario deslogado")
         history.push('/logar')
     }
-  
+
     return (
         <>
             <Button className='text-decorator-none font-linkNavbar ' aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
@@ -70,6 +70,12 @@ function SimpleMenu() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
+                <MenuItem onClick={handleClose}><Link className='text-decorator-none' to='/perfil'>
+                    <Typography className='font-menu-navbar icon-nav' variant="h5" >
+                       Perfil
+                    </Typography>
+                </Link>
+                </MenuItem>
                 <MenuItem onClick={handleClose}><Link className='text-decorator-none' to='/posts'>
                     <Typography className='font-menu-navbar icon-nav' variant="h5" >
                         Postagem
@@ -97,43 +103,43 @@ function SimpleMenu() {
                     </Typography>
 
                 </MenuItem>
-               
+
             </Menu>
         </>
     );
 }
 function NavbarPri() {
-    
+
     var navbarComponent;
-   
 
-const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state) => state.tokens); 
 
-    if(token != ""){
-        navbarComponent =  <AppBar className="back-navbar" position="static">
-        <Toolbar className="end-navbar">
-         
-            <Button className='button-home-nav' >
-                <Link className='text-decorator-none ' to='/home'>
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens);
 
-                    <Typography className='font-linkNavbar ' variant="h5">
-                        <HomeIcon className="icon-nav" />
-                    </Typography>
-                </Link >
-                
-            </Button>
-            <ImageAvatars />
-            <SimpleMenu />
-         
-        </Toolbar>
-    </AppBar>
+    if (token != "") {
+        navbarComponent = <AppBar className="back-navbar" position="static">
+            <Toolbar className="end-navbar">
+
+                <Button className='button-home-nav' >
+                    <Link className='text-decorator-none ' to='/home'>
+
+                        <Typography className='font-linkNavbar ' variant="h5">
+                            <HomeIcon className="icon-nav" />
+                        </Typography>
+                    </Link >
+
+                </Button>
+                <ImageAvatars />
+                <SimpleMenu />
+
+            </Toolbar>
+        </AppBar>
     }
 
 
     return (
         <>
-           {navbarComponent}
+            {navbarComponent}
         </>
     )
 

@@ -8,13 +8,13 @@ import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import AddIcon from '@material-ui/icons/Add';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensRedux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 function CadastroPost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       ) 
     

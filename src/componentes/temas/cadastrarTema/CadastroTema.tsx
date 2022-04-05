@@ -8,12 +8,12 @@ import useLocalStorage from 'react-use-localstorage';
 import AddIcon from '@material-ui/icons/Add';
 import './CadastroTema.css';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensRedux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 function CadastroTema() {
     let history = useHistory();
     const { id } = useParams<{id: string}>();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       ) 
     

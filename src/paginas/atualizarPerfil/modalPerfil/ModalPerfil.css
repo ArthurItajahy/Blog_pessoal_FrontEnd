@@ -1,0 +1,20 @@
+.cursor{
+    cursor: pointer;
+}
+
+.btnModal{
+    background-color: transparent !important;
+    border: 3px solid #6e5e01 !important;
+    color: #686101 !important;
+    font-weight: bold !important;
+    border-radius: 4%!important;
+}
+
+.btnModal:hover{
+    background-color: #fac000 !important;
+    color: #050505 !important;
+    border:3px solid #ebc700  !important;
+}
+.icon-model{
+    font-size: xx-large!important;
+}

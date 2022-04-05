@@ -6,12 +6,12 @@ import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensRedux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 function ListaTema() {
 
   const [temas, setTemas] = useState<Tema[]>([])
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   ) 
 

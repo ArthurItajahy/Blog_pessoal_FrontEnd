@@ -5,14 +5,14 @@ import './ListaPostagem.css';
 import { busca } from '../../../services/Service';
 import Postagem from '../../../models/Postagem';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensRedux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
   
   let history = useHistory();
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   ) 
 

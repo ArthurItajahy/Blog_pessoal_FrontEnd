@@ -6,12 +6,12 @@ import { buscaId, deleteId } from '../../../services/Service';
 
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensRedux';
+import { UserState } from '../../../store/tokens/keysRedux';
 
 function DeletarPostagem() {
   let history = useHistory();
     const { id } = useParams<{id: string}>();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
       (state) => state.tokens
     ) 
   
