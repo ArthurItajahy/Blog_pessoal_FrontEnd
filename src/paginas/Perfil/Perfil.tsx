@@ -9,6 +9,7 @@ import { buscaId } from '../../services/Service'
 
 import './Perfil.css'
 import ModalPerfil from '../atualizarPerfil/modalPerfil/ModalPerfil'
+import { toast } from 'react-toastify'
 
 function Perfil() {
 
@@ -34,8 +35,17 @@ function Perfil() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
+            toast.error('Você precisa estar logado.', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        }); 
+            history.push("/logar")
         }
     }, [token])
 

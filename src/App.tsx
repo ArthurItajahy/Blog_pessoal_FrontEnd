@@ -16,7 +16,8 @@ import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 import NavbarPri from './componentes/estaticos/navbar/NavbarPri';
 import { Provider } from 'react-redux';
 import store from './store/store';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Perfil from './paginas/Perfil/Perfil';
 
@@ -27,6 +28,7 @@ import Perfil from './paginas/Perfil/Perfil';
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer/>
       <Router>
 
         <Switch>

@@ -6,6 +6,7 @@ import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { ForwardToInbox } from '@mui/icons-material';
+import { toast } from 'react-toastify';
 
 
 function CadastroUsuario() {
@@ -54,9 +55,27 @@ function CadastroUsuario() {
         e.preventDefault()
         if(confirmarSenha === user.senha && confirmarSenha.length >= 8 ){
         cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
+            toast.success('Usuario cadastrado com sucesso.', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        }); 
         }else{
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });      
         }
     }
     return (
@@ -66,8 +85,10 @@ function CadastroUsuario() {
                 <Box paddingX={10}>
                     <form onSubmit={onSubmit}>
                          <Typography variant='h3' gutterBottom component='h3' align='center' style={{ fontWeight: 'bold' }}>Cadastrar</Typography>
+                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='link foto' variant='outlined' name='foto' margin='normal'  fullWidth />
                         <TextField  value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}  id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal'fullWidth />
+
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>

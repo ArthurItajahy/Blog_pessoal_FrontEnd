@@ -9,6 +9,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import AddIcon from '@material-ui/icons/Add';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
+import { toast } from 'react-toastify';
 
 function CadastroPost() {
     let history = useHistory();
@@ -16,12 +17,21 @@ function CadastroPost() {
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-      ) 
-    
+    )
+
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history.push("/logar")
 
         }
@@ -89,10 +99,29 @@ function CadastroPost() {
                         'Authorization': token
                     }
                 })
-                alert('Postagem atualizada com sucesso');
+                toast.success('Postagem atualizada com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
                 back()
             } catch (error) {
-                alert('Error!! a o atualizar.')
+
+                toast.error('Error!! a o atualizar.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
         } else {
             try {
@@ -101,13 +130,32 @@ function CadastroPost() {
                         'Authorization': token
                     }
                 })
-                alert('Postagem cadastrada com sucesso');
+                toast.success('Postagem cadastrada com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
                 back()
             } catch (error) {
                 alert('Error!! a o postar.')
+                toast.error('Error!! a o postar', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
         }
-        
+
 
     }
 
@@ -118,7 +166,7 @@ function CadastroPost() {
     return (
         <Container maxWidth="sm" className="topo form-style">
             <form className="form-principal-cadastrar" onSubmit={onSubmit}>
-                <Typography  className="title-cadastro-tema" variant="h3"  component="h1" align="center" >Nova Postagem</Typography>
+                <Typography className="title-cadastro-tema" variant="h3" component="h1" align="center" >Nova Postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
@@ -139,8 +187,8 @@ function CadastroPost() {
                         }
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button  className="btnModal" type="submit" variant="contained" color="primary">
-                        Criar<AddIcon className='icon-model'/>
+                    <Button className="btnModal" type="submit" variant="contained" color="primary">
+                        Criar<AddIcon className='icon-model' />
                     </Button>
                 </FormControl>
             </form>

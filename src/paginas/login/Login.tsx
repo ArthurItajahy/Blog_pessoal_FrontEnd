@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { addId, addToken } from '../../store/tokens/action';
 
 import './Login.css';
+import { toast } from 'react-toastify';
 
 
 function Login() {
@@ -72,9 +73,27 @@ function Login() {
         try {
             await login(`/usuarios/logar`, userLogin, setRespUserLogin)
 
-            alert('Usuário logado com sucesso!');
+            toast.success('Usuário logado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            }); 
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            }); 
         }
     }
 

@@ -9,6 +9,7 @@ import AddIcon from '@material-ui/icons/Add';
 import './CadastroTema.css';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
+import { toast } from 'react-toastify';
 
 function CadastroTema() {
     let history = useHistory();
@@ -24,7 +25,16 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             history.push("/logar")
     
         }
@@ -62,9 +72,28 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                alert('Tema atualizado com sucesso');
+                toast.success('Tema atualizado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });     
+            
             }catch(error){
-                alert('Error!! Ao atualizar.')
+                 toast.error('Error!! Ao atualizar.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
             } else {
                 try{
@@ -73,9 +102,28 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                alert('Tema cadastrado com sucesso');
+                toast.success('Tema cadastrado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }catch{
-                alert('Error!! ao cadastrar tema.')
+                toast.success('Error!! ao cadastrar tema.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+
             }
             }
             back()

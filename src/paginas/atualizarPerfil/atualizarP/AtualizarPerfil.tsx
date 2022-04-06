@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import User from '../../../models/User';
+import { toast } from 'react-toastify';
 
 function AtualizarPerfil() {
 
@@ -72,9 +73,30 @@ function AtualizarPerfil() {
                         'Authorization': token
                     }
                 })
-                alert('Usuario atualizado com sucesso');
+            
+                toast.success('Usuario atualizado com sucesso.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+
             } catch (error) {
-                alert('Error!! Ao atualizar.')
+
+                toast.error('Error!! Ao Atualizar.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
             back()
         }
@@ -90,9 +112,9 @@ function AtualizarPerfil() {
             <form className="form-principal-cadastrar" onSubmit={onSubmit}>
                 <Typography className="title-cadastro-tema" variant="h3" component="h1" align="center" >Atualizar Foto</Typography>
                 <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
-                 <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="usuario" label="usuario" variant="outlined" name="usuario" margin="normal" fullWidth />
+                <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="usuario" label="usuario" variant="outlined" name="usuario" margin="normal" fullWidth />
                 <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="senha" label="senha" variant="outlined" name="senha" margin="normal" fullWidth />
-                 <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="foto" label="link foto" variant="outlined" name="foto" margin="normal" fullWidth />
+                <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="foto" label="link foto" variant="outlined" name="foto" margin="normal" fullWidth />
                 <Button className="btnModal" type="submit" variant="contained" color="primary">
                     Atualizar<BorderColorIcon className='icon-model' />
                 </Button>
