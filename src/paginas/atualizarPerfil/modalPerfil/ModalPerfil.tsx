@@ -4,8 +4,8 @@ import Modal from '@material-ui/core/Modal';
 import {Button,Box } from "@material-ui/core"
 import CloseIcon from '@material-ui/icons/Close';
 import './ModalPerfil.css';
-import AddIcon from '@material-ui/icons/Add';
 import AtualizarPerfil from '../atualizarP/AtualizarPerfil';
+import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 
 function getModalStyle() {
@@ -62,7 +62,7 @@ function ModalPerfil () {
       <Button
         variant="outlined"
         className="btnModal"
-        onClick={handleOpen}><AddIcon className='icon-model'/>Atualizar Perfil</Button>
+        onClick={handleOpen}><BorderColorIcon /></Button>
       <Modal
         open={open}
         onClose={handleClose}

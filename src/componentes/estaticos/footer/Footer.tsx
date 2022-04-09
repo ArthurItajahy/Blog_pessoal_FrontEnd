@@ -11,7 +11,6 @@ import { UserState } from '../../../store/tokens/keysRedux';
 
 function Footer(){
 
-    const dispatch = useDispatch();
 
 
     const token = useSelector<UserState, UserState["tokens"]>(

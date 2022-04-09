@@ -1,17 +1,15 @@
 
 import React, { useState, useEffect, ChangeEvent } from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
-import Tema from '../../../models/Tema';
-import { buscaId, post, put } from '../../../services/Service';
-import { useHistory, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
-import AddIcon from '@material-ui/icons/Add';
+import { buscaId, put } from '../../../services/Service';
+import { useHistory } from 'react-router-dom';
 import './AtualizarPerfil.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import User from '../../../models/User';
 import { toast } from 'react-toastify';
+import { addToken } from '../../../store/tokens/action';
 
 function AtualizarPerfil() {
 
@@ -26,7 +24,7 @@ function AtualizarPerfil() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     )
-
+    const dispatch = useDispatch();
     const [user, setUser] = useState<User>({
         id: +id,    // Faz uma conversão de String para Number
         nome: '',
@@ -37,8 +35,17 @@ function AtualizarPerfil() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
+            toast.error('Você precisa estar logado', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+            history.push("/logar")
         }
     }, [token])
 
@@ -73,7 +80,7 @@ function AtualizarPerfil() {
                         'Authorization': token
                     }
                 })
-            
+
                 toast.success('Usuario atualizado com sucesso.', {
                     position: "top-right",
                     autoClose: 2000,
@@ -84,7 +91,8 @@ function AtualizarPerfil() {
                     theme: "colored",
                     progress: undefined,
                 });
-
+                dispatch(addToken(''))
+                backlogar()
             } catch (error) {
 
                 toast.error('Error!! Ao Atualizar.', {
@@ -97,15 +105,18 @@ function AtualizarPerfil() {
                     theme: "colored",
                     progress: undefined,
                 });
+                backperfil()
             }
-            back()
-        }
-
-        function back() {
-            history.push('/perfil')
         }
     }
+    function backlogar() {
+        history.push('/logar')
 
+    }
+    function backperfil() {
+        history.push('/perfil')
+
+    }
 
     return (
         <Container maxWidth="sm" className="topo">

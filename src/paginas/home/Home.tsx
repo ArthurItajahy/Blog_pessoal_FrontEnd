@@ -35,7 +35,7 @@ function Home(){
             <Grid className="fonte back-home" container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
-                        <Typography variant="h3" gutterBottom component="h3" align="center" className="title-princial-home">Thinking, No talk!</Typography>
+                        <Typography variant="h3" gutterBottom component="h3" align="center" className="title-princial-home">Thinking,No talk!</Typography>
                         <Typography variant="h5" gutterBottom  component="h5" align="center" className="text-princpal-home" >Um lugar focado em reunir pessoas para resolver problemas...</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">

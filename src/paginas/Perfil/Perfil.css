@@ -1,33 +1,59 @@
-.card-principal{
+.card-principal {
     display: flex;
-    border-radius: 32px 0;
-    padding: 20px;
-    margin: 20px;
-    background-color: #3f51b5;
+    border-radius: 12px;
+
+    margin-left: 12% !important;
+    margin-top: 2% !important;
+    background-color: #04c263;
+    max-width: 75vw !important;
+    min-height: 80vh !important;
 }
 
-.card-container-imagem{
+.card-container-imagem {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 40px;
+
 }
 
-.card-container-info{
-    display: flex;
-    flex-direction: column;
+.card-container-info {
     align-items: center;
-    margin: 32px 32px 32px 56px;
+    text-align: center!important;
+    margin-top: 10%!important;
+    max-height: 55vh!important;
+    background-color: #151d24;
+    border-radius: 0px 0px 12px 12px;
 }
 
-.card-imagem{
-    max-height: 500px;
-    border-radius: 32px;
-    object-fit: cover;
+.card-imagem {
+    display: inline-block;
+    width: 120px;
+    position: absolute;
+    margin-top: 135px;
+    margin-left: 100px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid #151d24;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
-.card-container-texto{
-    max-width: 550px;
+
+.boxText-PerFil{
+    margin-top: 2%;
+    text-align: center;
+    margin-left: 20%;
+    max-width: 75%!important;
+    max-height: 75%!important;
     color: #fff;
+    font-size: small;
     text-align: justify;
+}
+.h1-nome-perfil{
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 16%;
+    color: #04c263;
 }

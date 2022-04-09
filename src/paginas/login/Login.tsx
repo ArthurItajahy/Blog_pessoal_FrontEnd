@@ -47,7 +47,7 @@ function Login() {
     }
 
     useEffect(() => {
-        if (token !== '') {
+        if (token != '') {
             dispatch(addToken(token))
             history.push('/home')
         }
@@ -55,7 +55,7 @@ function Login() {
 
 
     useEffect(() => {
-        if (respUserLogin.token !== "") {
+        if (respUserLogin.token != "") {
 
             // Verifica os dados pelo console (Opcional)
             console.log("Token: " + respUserLogin.token)

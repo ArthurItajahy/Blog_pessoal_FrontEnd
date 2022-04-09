@@ -10,6 +10,7 @@ import { buscaId } from '../../services/Service'
 import './Perfil.css'
 import ModalPerfil from '../atualizarPerfil/modalPerfil/ModalPerfil'
 import { toast } from 'react-toastify'
+import { Grid } from '@mui/material'
 
 function Perfil() {
 
@@ -36,15 +37,15 @@ function Perfil() {
     useEffect(() => {
         if (token === "") {
             toast.error('Você precisa estar logado.', {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-        }); 
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history.push("/logar")
         }
     }, [token])
@@ -65,20 +66,22 @@ function Perfil() {
     }, [id])
 
     return (
-        <Box className='card-principal'>
+        <Grid xs={12}  className='card-principal' container spacing={9}>
             <Box className='card-container-imagem'>
                 <img className='card-imagem'
-                    src={ user.foto }
-                    alt={ user.nome } />
+                    src={user.foto}
+                    alt={user.nome} />
             </Box>
+            <h1 className='h1-nome-perfil'> {user.nome} </h1> 
+            <Grid item xs={12 }   >
+                
 
-            <Box className='card-container-info'>
-                <Box>
-                    <h1>{ user.nome }</h1>
-                    <hr />
-                </Box>
-                <ModalPerfil/>
-
+            </Grid>
+            
+            <Grid className="card-container-info card-container-texto" item xs={12} spacing={0}>
+                <Box className='boxText-PerFil'>
+                    
+                <h2>Descrição: </h2>
                 <p className='card-container-texto'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam accusantium totam incidunt architecto maiores, perferendis eius. Tempora ullam magni dolore voluptatibus, quidem sunt tempore distinctio ut aliquam modi aliquid officiis.
                     Assumenda voluptatibus, animi pariatur voluptatum magnam ullam aspernatur optio suscipit incidunt dolor modi quos aperiam. Quam possimus rerum iste nobis quas porro unde sequi, sed nisi labore est voluptas corrupti.
@@ -88,8 +91,24 @@ function Perfil() {
                 <p className='card-container-texto'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consectetur tempore enim hic ad, optio ratione repellendus et. Nemo facilis laborum eum facere ipsam ab ad iusto eligendi deleniti qui?
                 </p>
-            </Box>
-        </Box>
+                    
+                </Box>
+    
+             
+
+
+
+
+
+            </Grid>
+
+
+
+
+
+        </Grid>
+
+
     )
 }
 
