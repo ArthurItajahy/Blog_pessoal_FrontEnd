@@ -11,6 +11,7 @@ import './Perfil.css'
 import ModalPerfil from '../atualizarPerfil/modalPerfil/ModalPerfil'
 import { toast } from 'react-toastify'
 import { Grid } from '@mui/material'
+import TabPostagemPerfil from '../../componentes/postagens/tabpostagensPerfil/TabPostagemPerfil'
 
 function Perfil() {
 
@@ -65,22 +66,27 @@ function Perfil() {
         }
     }, [id])
 
+
     return (
-        <Grid xs={12}  className='card-principal' container spacing={9}>
+        <Grid xs={12}  className='card-principal' container spacing={2}>
             <Box className='card-container-imagem'>
                 <img className='card-imagem'
                     src={user.foto}
                     alt={user.nome} />
             </Box>
             <h1 className='h1-nome-perfil'> {user.nome} </h1> 
+            <Box className="Box-NoCanto-Perfil">
+                <ModalPerfil/> 
+            </Box>
             <Grid item xs={12 }   >
                 
 
             </Grid>
             
             <Grid className="card-container-info card-container-texto" item xs={12} spacing={0}>
+          
                 <Box className='boxText-PerFil'>
-                    
+                
                 <h2>Descrição: </h2>
                 <p className='card-container-texto'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam accusantium totam incidunt architecto maiores, perferendis eius. Tempora ullam magni dolore voluptatibus, quidem sunt tempore distinctio ut aliquam modi aliquid officiis.
@@ -102,11 +108,15 @@ function Perfil() {
 
             </Grid>
 
+            <Grid xs={12} style={{backgroundColor:'#151d24',borderRadius:'0px 0px 22px 22px', marginBottom:'0px'}} >
+                <TabPostagemPerfil/>
 
+            </Grid>
 
 
 
         </Grid>
+        
 
 
     )

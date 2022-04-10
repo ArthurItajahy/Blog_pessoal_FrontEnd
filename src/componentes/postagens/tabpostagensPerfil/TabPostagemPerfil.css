@@ -1,0 +1,23 @@
+.titulo-tab{
+    font-weight: bold;
+    color: #ffffff;
+ }
+
+ .menu-tab-perfil{
+    font-weight: bold !important;
+    font-size: medium!important;
+    color: #53ff95ab !important;
+
+ }
+ .menu-tab-perfil:hover{
+   color: #53ff95!important;
+   border-bottom: 3px solid #53ff95!important;
+
+   border-left: 3px solid #53ff95!important;
+   border-right: 3px solid #53ff95!important;
+   border-radius:  0px 0px 22px 22px;
+
+ }
+ .back-home-Perfil{
+    background-color: #151d24!important;
+ }

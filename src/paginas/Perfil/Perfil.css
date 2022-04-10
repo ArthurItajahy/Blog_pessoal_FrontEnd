@@ -1,12 +1,12 @@
 .card-principal {
     display: flex;
-    border-radius: 12px;
+    border-radius: 22px 22px 40px 40px;
 
     margin-left: 12% !important;
     margin-top: 2% !important;
     background-color: #04c263;
     max-width: 75vw !important;
-    min-height: 80vh !important;
+    min-height: 100vh !important;
 }
 
 .card-container-imagem {
@@ -19,17 +19,17 @@
 .card-container-info {
     align-items: center;
     text-align: center!important;
-    margin-top: 10%!important;
-    max-height: 55vh!important;
+    margin-top: 27%!important;
+    padding: 100px!important;
+    max-height: 95vh!important;
     background-color: #151d24;
-    border-radius: 0px 0px 12px 12px;
 }
 
 .card-imagem {
     display: inline-block;
     width: 120px;
     position: absolute;
-    margin-top: 135px;
+    margin-top: 270px;
     margin-left: 100px;
     height: 120px;
     border-radius: 50%;
@@ -53,7 +53,12 @@
 }
 .h1-nome-perfil{
     position: absolute;
-    margin-top: 15%;
-    margin-left: 16%;
+    margin-top: 19rem;
+    margin-left: 16rem;
     color: #04c263;
+}
+.Box-NoCanto-Perfil{
+    position: absolute;
+    margin-top: 19rem!important;
+    margin-left: 32rem;
 }

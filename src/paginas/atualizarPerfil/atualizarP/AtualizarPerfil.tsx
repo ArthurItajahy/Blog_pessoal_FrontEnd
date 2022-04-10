@@ -75,6 +75,7 @@ function AtualizarPerfil() {
         e.preventDefault()
         if (id !== undefined) {
             try {
+                console.log(user)
                 await put(`/usuarios/atualizar`, user, setUser, {
                     headers: {
                         'Authorization': token
@@ -117,11 +118,11 @@ function AtualizarPerfil() {
         history.push('/perfil')
 
     }
-
+    user.senha = null
     return (
         <Container maxWidth="sm" className="topo">
             <form className="form-principal-cadastrar" onSubmit={onSubmit}>
-                <Typography className="title-cadastro-tema" variant="h3" component="h1" align="center" >Atualizar Foto</Typography>
+                <Typography className="title-cadastro-tema" variant="h3" component="h1" align="center" >Atualizar Perfil</Typography>
                 <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
                 <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="usuario" label="usuario" variant="outlined" name="usuario" margin="normal" fullWidth />
                 <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUser(e)} id="senha" label="senha" variant="outlined" name="senha" margin="normal" fullWidth />

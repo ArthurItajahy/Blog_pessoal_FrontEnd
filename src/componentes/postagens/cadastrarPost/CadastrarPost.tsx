@@ -142,7 +142,6 @@ function CadastroPost() {
                 });
                 back()
             } catch (error) {
-                alert('Error!! a o postar.')
                 toast.error('Error!! a o postar', {
                     position: "top-right",
                     autoClose: 2000,
