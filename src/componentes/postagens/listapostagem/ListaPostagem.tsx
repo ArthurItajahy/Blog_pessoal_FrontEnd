@@ -55,6 +55,9 @@ function ListaPostagem() {
           <Box  className="largura" m={0} >
             <Card className="back-listapostagem" variant="outlined">
               <CardContent >
+              <Typography color="textSecondary" gutterBottom>
+                  {post.usuario?.nome}
+                </Typography>
                 <Typography color="textSecondary" gutterBottom>
                   Postagens
                 </Typography>

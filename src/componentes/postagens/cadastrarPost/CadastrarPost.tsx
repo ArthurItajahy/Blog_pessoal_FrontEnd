@@ -10,6 +10,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 import { toast } from 'react-toastify';
+import User from '../../../models/User';
 
 function CadastroPost() {
     let history = useHistory();
@@ -19,6 +20,19 @@ function CadastroPost() {
         (state) => state.tokens
     )
 
+    // Pega o ID guardado no Store
+    const idUser = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+        );
+    
+    const [user, setUser] = useState<User>({
+        id: +idUser,    // Faz uma conversão de String para Number
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
+    })
+  
 
     useEffect(() => {
         if (token == "") {
@@ -46,8 +60,24 @@ function CadastroPost() {
         id: 0,
         titulo: '',
         texto: '',
-        tema: null
+        tema: null,
+        usuario: null
     })
+
+     // Métedo para pegar os dados de um Usuário especifico pelo ID
+     async function findById(id: string) {
+        buscaId(`/usuarios/${id}`, setUser, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    useEffect(() => {
+        if (id !== undefined) {
+            findById(id)
+        }
+    }, [id])
 
     useEffect(() => {
         setPostagem({
@@ -84,7 +114,8 @@ function CadastroPost() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
 
     }
