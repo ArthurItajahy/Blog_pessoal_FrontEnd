@@ -77,8 +77,7 @@ function ListaPostagemPerfil() {
 
   }, [posts.length])
 
-  var postagem = posts.map(function(post){
-    if(post.usuario?.id == user.id){
+  var postagem = posts.map(post => (
       <Box className="largura-perfil" m={5} >
     <Card className="back-listapostagem" variant="outlined">
       <CardContent >
@@ -117,8 +116,8 @@ function ListaPostagemPerfil() {
       </CardActions>
     </Card>
   </Box>
-    }
-  })
+    
+  ))
     return (
     < >
       {postagem}

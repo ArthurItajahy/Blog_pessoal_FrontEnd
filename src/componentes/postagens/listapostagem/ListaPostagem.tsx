@@ -11,8 +11,8 @@ const useStyles1 = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
-            width: theme.spacing(5),
-            height: theme.spacing(5),
+            width: theme.spacing(10),
+            height: theme.spacing(10),
         },
     }),
 );
