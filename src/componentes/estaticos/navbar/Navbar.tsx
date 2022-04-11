@@ -2,9 +2,7 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Box, Button, ButtonGroup, Grid } from '@mui/material';
-import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import { Box } from '@mui/material';
 
 import './Navbar.css';
 

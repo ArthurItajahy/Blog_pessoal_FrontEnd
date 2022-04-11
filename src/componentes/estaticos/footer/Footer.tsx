@@ -6,7 +6,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Box, Grid } from '@material-ui/core';
 import './Footer.css';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/keysRedux';
 
 function Footer(){
@@ -18,7 +18,7 @@ function Footer(){
       ) 
 
       var footerComponent;
-      if(token != ''){
+      if(token !== ''){
           footerComponent = <Grid container direction="row" justifyContent="center" alignItems="center">
           <Grid alignItems="center" item xs={12}>
               <Box style={{ backgroundColor: "#000803", height: "120px" }}>

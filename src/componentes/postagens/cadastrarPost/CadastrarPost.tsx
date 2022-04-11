@@ -3,7 +3,6 @@ import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem,
 import './CadastrarPost.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import AddIcon from '@material-ui/icons/Add';
